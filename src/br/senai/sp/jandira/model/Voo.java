@@ -3,9 +3,28 @@ package br.senai.sp.jandira.model;
 import java.util.Date;
 
 abstract class Voo {
-    private String companhia, destino, origem, horaSaida;
-    private Date dataSaida;
+    private String companhia, destino, origem, horaSaida,dataSaida;
     private int qtdePassageiros, numeroVoo;
+
+    public Voo(String companhia, String destino, String origem, String horaSaida, String dataSaida, Integer numeroVoo, Integer qtdePassageiros) {
+        this.companhia = companhia;
+        this.destino = destino;
+        this.origem = origem;
+        this.horaSaida = horaSaida;
+        this.dataSaida = dataSaida;
+        this.numeroVoo = numeroVoo;
+        this.qtdePassageiros = qtdePassageiros;
+    }
+
+    public String print() {
+        return "Companhia: " + companhia + "\n" +
+                "Destino: " + destino + "\n" +
+                "Origem: " + origem + "\n" +
+                "Hora de Saída: " + horaSaida + "\n" +
+                "Data de Saída: " + dataSaida + "\n" +
+                "Número do Voo: " + numeroVoo + "\n" +
+                "Quantidade de Passageiros: " + qtdePassageiros;
+    }
 
     public String getCompanhia() {
         return companhia;
@@ -39,11 +58,11 @@ abstract class Voo {
         this.horaSaida = horaSaida;
     }
 
-    public Date getDataSaida() {
+    public String getDataSaida() {
         return dataSaida;
     }
 
-    public void setDataSaida(Date dataSaida) {
+    public void setDataSaida(String dataSaida) {
         this.dataSaida = dataSaida;
     }
 
